@@ -1,7 +1,7 @@
 import styled,{ThemeProvider} from 'styled-components';
 import {BrowserRouter} from "react-router-dom";
 import Navbar from './components/Navbar'
-import {Home} from './pages/Home';
+import {Home} from './pages/Home.jsx';
 import { lightTheme } from "./utils/Themes.js";
 import {Routes, Route} from "react-router-dom";
 import { useState } from 'react';

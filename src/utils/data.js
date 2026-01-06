@@ -1,4 +1,4 @@
-export const category = [
+export const Category = [
   {
     img: "https://i.pinimg.com/736x/fd/4b/1e/fd4b1e9fbbee80cb8528fea54cddcb50.jpg",
     name: "Burgers",
