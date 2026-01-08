@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Category } from '../utils/data';
 import HeaderImage from '../utils/Images/Header.png';
 import ProductCategoryCard from '../components/Cards/ProductCategoryCard.jsx';
-import ProductCards from '../components/Cards/ProductCards.jsx';
+import ProductsCard from '../components/Cards/ProductsCard.jsx';
+
 const Container = styled.div`
 padding: 20px 30px ;
 padding-bottom: 200px;
@@ -68,7 +69,7 @@ const Home = () => {
         <CardWrapper>
           {Category.map((category) => (
             // Render category card here
-            <ProductCards/>
+            <ProductsCard/>
           ))}
         </CardWrapper>
       </Section>

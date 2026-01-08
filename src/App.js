@@ -6,6 +6,8 @@ import { lightTheme } from "./utils/Themes.js";
 import {Routes, Route} from "react-router-dom";
 import { useState } from 'react';
 import Authentication from './pages/Authentication';
+import Favourites from './pages/Favourites.jsx';
+import Cart from './pages/Cart.jsx';  
 
 const Container = styled.div``;
 
@@ -18,6 +20,8 @@ function App() {
       <Container>
         <Navbar setOpenAuth={setOpenAuth} openAuth={openAuth}/>
         <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/favourites" element={<Favourites/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
         {openAuth && <Authentication  setOpenAuth={setOpenAuth} openAuth={openAuth}/>}

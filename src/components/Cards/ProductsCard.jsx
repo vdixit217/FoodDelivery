@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+
 import styled from "styled-components";
 import {  Rating } from "@mui/material";
-import {productsData} from "../../utils/data";
+import FavouriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';  
+import React from "react";
+import {CircularProgress } from "@mui/material";
 
 const Card = styled.div`
   width: 300px;
@@ -76,12 +79,14 @@ const Rate = styled.div`
   display: flex;
   align-items: center;
   opacity: 0.9;
+  transition: all 0.3s ease-out;
 `;
 const Details = styled.div`
   display: flex;
   gap: 6px;
   flex-direction: column;
   padding: 4px 10px;
+  transition: all 0.3s ease-out;
 `;
 const Title = styled.div`
   font-size: 16px;
@@ -107,11 +112,7 @@ const Price = styled.div`
   font-weight: 500;
   color: ${({ theme }) => theme.text_primary};
 `;
-const Percent = styled.div`
-  font-size: 12px;
-  font-weight: 500;
-  color: green;
-`;
+
 const Span = styled.div`
   font-size: 14px;
   font-weight: 500;
@@ -119,26 +120,40 @@ const Span = styled.div`
   text-decoration: line-through;
   text-decoration-color: ${({ theme }) => theme.text_secondary + 50};
 `;
+const Percent = styled.div`
+  font-size: 12px;
+  font-weight: 600; 
+  color: green;
+`;
 
-const ProductsCard = ({ product }) => {
- 
-  return (
+const ProductsCard = () => {
+  return(
     <Card>
       <Top>
-        <Image src={product?.img} />
-    
+        <Image src="https://images.themodernproper.com/production/posts/2016/ClassicCheeseBurger_9.jpg?w=300&q=82&auto=format&fit=crop&dm=1749310239&s=55dfe0ef58d90bda092dc7bc2de53c76" />
+        <Menu>
+          <MenuItem>
+          <FavouriteRoundedIcon sx={{ fontSize: "16px", color: "black" }} />
+          </MenuItem>
+          <MenuItem>
+          <ShoppingCartRoundedIcon sx={{ fontSize: "16px", color: "black" }} />
+          </MenuItem>
+        </Menu>
         <Rate>
-          <Rating value={3.5} sx={{ fontSize: "14px" }} />
+          <Rating value={3.5} sx={{ fontSize: "14px" }}> 
+          </Rating>
         </Rate>
+
       </Top>
-      <Details >
-        <Title>{product?.name}</Title>
-        <Desc>{product?.desc}</Desc>
-        <Price>
-          ${product?.price?.org} <Span>${product?.price?.mrp}</Span>
-          <Percent> (${product?.price?.off}% Off) </Percent>
-        </Price>
+      <Details>
+        <Title>
+          Burger
+        </Title>
+        <Desc>Burger desc</Desc>
+        <Price>$12.00 <Span><Percent>(20% off)</Percent></Span></Price>
       </Details>
+     
+
     </Card>
   );
 };
