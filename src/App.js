@@ -8,6 +8,8 @@ import { useState } from 'react';
 import Authentication from './pages/Authentication';
 import Favourites from './pages/Favourites.jsx';
 import Cart from './pages/Cart.jsx';  
+import FoodDetails from './pages/FoodDetails.jsx';
+import FoodListing from './pages/FoodListing.jsx';
 
 const Container = styled.div``;
 
@@ -22,7 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/favourites" element={<Favourites/>}/>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/dishes/:id" element={<FoodDetails/>}/>
+          <Route path="/dishes" element={<FoodListing/>}/>
         </Routes>
         {openAuth && <Authentication  setOpenAuth={setOpenAuth} openAuth={openAuth}/>}
       </Container>
