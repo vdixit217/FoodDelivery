@@ -12,6 +12,7 @@ const Filters = styled.div`
     margin-bottom: 24px;
 `;
 const Menu = styled.div``;
+
 const Products = styled.div`
     width: 100%;
     max-width: 1400px;
